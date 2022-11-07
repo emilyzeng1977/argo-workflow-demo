@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+bases:
+  - ../../base
+
+secretGenerator:
+  - name: aws-ecr-secret
+    namespace: argo
+    literals:
+      - AWS_ACCESS_KEY_ID=abc
+      - AWS_SECRET_ACCESS_KEY=123
+      - AWS_DEFAULT_REGION=ap
